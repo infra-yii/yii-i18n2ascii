@@ -3,11 +3,14 @@ yii-i18n2ascii
 
 Yii extension to handle transliteration and some kind of internationalization.
 
-=Usage=
+Usage
+====
 
 Add submodule:
 
 `git add submodule git://github.com/alari/yii-i18n2ascii.git protected/extensions/i18n2ascii`
+
+Or download it and place to `protected/extensions/i18n2ascii` folder.
 
 Register the component:
 
