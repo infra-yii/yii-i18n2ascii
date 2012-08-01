@@ -55,13 +55,12 @@ class I18n2ascii extends CComponent
 
     private function loadMap()
     {
-        foreach (glob(dirname(__FILE__) . "/*.txt") as $fn) {
-            $this->map = array_merge($this->map, parse_ini_file($fn));
-        }
-        foreach (glob($this->mapsDir . "*.txt") as $fn) {
+        $files = array_merge(glob(dirname(__FILE__) . "/*.txt"), glob($this->mapsDir . "*.txt"));
+        if(!is_array($files) || !count($files)) return;
+
+        foreach ($files as $fn) {
             $this->map = array_merge($this->map, parse_ini_file($fn));
         }
         $this->map[" "] = "-";
-
     }
 }
