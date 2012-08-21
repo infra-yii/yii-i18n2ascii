@@ -14,7 +14,8 @@ Or download it and place to `protected/extensions/i18n2ascii` folder.
 
 Register the component:
 
-```
+```php
+<?
 'i18n2ascii' => array(
        'class' => 'application.extensions.i18n2ascii.I18n2ascii'
 )
@@ -22,7 +23,8 @@ Register the component:
 
 Use it in your modeles or directly:
 
-```
+```php
+<?
 public function beforeSave()
   {
    if(Yii::app()->getComponent("i18n2ascii")) {
@@ -30,6 +32,21 @@ public function beforeSave()
    }
    return true;
   }
+```
+
+Or you may use it as a behaviour:
+
+```php
+<?
+        public function behaviors()
+        {
+            $behaviors = parent::behaviors();
+            $behaviors['imagesHolder'] = array(
+                'class' => 'ext.i18n2ascii.I18n2asciiBehavior',
+                //'pathSourceAttr' => 'title'
+            );
+            return $behaviors;
+        }
 ```
 
 You can use Drupal i18n2ascii files to extend transliteration rules. Place additional files into your `messages` folder.

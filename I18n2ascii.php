@@ -25,7 +25,8 @@ class I18n2ascii extends CComponent
     private $map = Array();
     private $mapsDir = "protected/messages/";
 
-    public function init() {}
+    public function init() {
+    }
 
     public function setModelUrlAlias(CActiveRecord $model, $path, $attr="path", $stringSuffix = "p") {
         if (!$model->$attr) {
